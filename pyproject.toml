@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "sue"
+version = "0.1.0"
+description = ""
+authors = []
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.13"
+parse = "^1.20.2"
+pyyaml = "^6.0.3"
+prometheus-client = "^0.24.1"
+watchdog = {extras = ["watchmedo"], version = "^6.0.0"}
+uvloop = "^0.22.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
