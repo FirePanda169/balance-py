@@ -1,0 +1,44 @@
+host: "0.0.0.0"
+port: 8000
+workers: 3
+upstreams:
+  - host: "service1"
+    port: 8000
+    ssl: false
+  - host: "service2"
+    port: 8000
+    ssl: false
+
+  # - host: "127.0.0.1"
+  #   port: 8001
+  #   ssl: false
+  # - host: "127.0.0.1"
+  #   port: 8002
+  #   ssl: false
+proxy_headers:
+  - user-agent
+  - accept
+  - x-request-id
+timeouts:
+  keep-alive: 5000
+  connect_ms: 2000
+  read_ms: 3000
+  write_ms: 3000
+  total_ms: 5000
+limits:
+  max_client_conns: 1000
+  max_conns_per_upstream: 250
+logging:
+  level: "INFO"
+  # level: "DEBUG"
+  # UpstreamPool: "DEBUG"
+  # ProxyServer: "DEBUG"
+  ClientConnectionHandler: "DEBUG"
+debug: false
+# debug: true
+mainlog: false
+# mainlog: true
+contimings: false
+# contimings: true
+timings: false
+# timings: true
